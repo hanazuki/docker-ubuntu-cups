@@ -16,4 +16,5 @@ COPY docker-entrypoint.sh /
 RUN chmod +x docker-entrypoint.sh
 
 EXPOSE 631
+VOLUME ["/var/spool/cups-pdf/ANONYMOUS"]
 ENTRYPOINT ["/docker-entrypoint.sh"]

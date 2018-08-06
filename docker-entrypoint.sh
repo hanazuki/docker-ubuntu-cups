@@ -15,7 +15,7 @@ if ! id "$CUPS_ADMIN_USERNAME" >/dev/null 2>&1; then
 fi
 
 sed -i /etc/cups/cupsd.conf -e "s|^LogLevel .*$|LogLevel $CUPS_LOG_LEVEL|"
-chmod o+wt /var/spool/cups-pdf/ANONYMOUS
+chmod 1777 /var/spool/cups-pdf/ANONYMOUS
 
 if [[ -d /docker-entrypoint.d ]]; then
     run-parts --exit-on-error /docker-entrypoint.d
